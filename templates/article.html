@@ -1,0 +1,29 @@
+
+{% extends "index.html" %}
+{% load static %}
+{% block article %}
+                  <div class="col-md-12">
+                    <img src="{{ article.image.url }}" class="article-img">
+                    <div id='row'>
+                   <div class="article-h">  
+					<img src="{% static 'img/7eIuUl.png' %}"><h2>{{ article.title }}</h2></div></div>
+                    <hr class="style14">
+                    <div class="article-info">
+                        Opublikowano : {{ article.published }}
+                    </div>
+                    
+                    <div class="article-intro">
+                        <p>{{ article.content }}</p>
+                    </div>
+                    <hr class="style14">
+                    <h3>Komentarze</h3><!-- Komentarze -->
+                    {% for c in article.comment_set.all %}
+                    <div id="shell">
+                        <h4><span><em>{{ c.name }}</em></span></h4>
+                        <p><em>Opublikowano: {{ c.published }}</em></p>
+                        <p>{{ c.content }}</p>
+                    </div>
+                    {%  endfor %}
+                    <h5><a href="/article/{{ article.id }}/add_comment" class="label label-info pull-left">Dodaj komentarz</a></h5>
+    </div>       
+{% endblock %}

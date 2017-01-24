@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Tytuł</title>
+   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+ 
+<body>
+
+<div class="container" id="wrapper">
+
+    <div class="row"><!--  PASEK GORA -->
+        <div class="col-md-12">
+            <div class="topbar">
+                <div class="logo">
+                    <h1><a href="http://127.0.0.1:8000/"><img src="{% static 'img/poziom.png' %}"></a></h1>
+                </div>
+                <div class="logreg">
+                    <a href="/accounts/login/">Logowanie</a> | <a href="accounts/signup/">Rejestracja</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+       <div id="shell">
+                    <h2>
+                        Witam!
+                    </h2>
+                    <p>
+                        Blog stworzony na zajęcia labolatoryjne z przedmiotu Systemy zarządzania treścią, za pomocą: Python 2.7, Django 1.9.9 oraz Bootstrap 3.5.
+                    </p>
+        </div>
+    </div>
+    </div>
+    <div class="row"><!-- Glowna czesc -->
+        <div class="col-md-12">
+        
+            <div class="row" id="newest"><!-- Najnowsze art -->
+
+                {% block featured %}
+                {% endblock %}
+
+            </div><!--  Koniec najnowszych art -->
+
+            <div class="row"><!-- Artykuly lista -->
+
+                {% block article %}
+                {% endblock %}
+
+            </div><!--  Koniec listy art -->
+
+        </div>
+
+    </div>
+
+    
+</div>
+
+</body> 
+
+</html>

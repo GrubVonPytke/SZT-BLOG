@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block article %}
+ <div class="col-md-12">
+<form action="/article/{{ article.id }}/add_comment/" method="post" class="form horizontal well">{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" class="btn btn-primary" name="submit" value="Dodaj komentarz" />
+</form>
+</div>
+{% endblock %}
