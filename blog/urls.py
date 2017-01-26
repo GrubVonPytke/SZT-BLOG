@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     url(r'^article/',include('articles.urls')),
     url(r'^$', 'articles.views.articles'),
+    url(r'^accounts/profile/' , 'articles.views.articles'),
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

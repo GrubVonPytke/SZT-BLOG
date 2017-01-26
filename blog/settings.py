@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'articles',
+    'news',
 ]
 
 SITE_ID = 1
