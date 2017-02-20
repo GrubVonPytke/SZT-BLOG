@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>SZT Igor Grodziński</title>
+   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+ 
+<body>
+
+<div class="container" id="wrapper">
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+    <div class="row"><!--  PASEK GORA -->
+        <div class="col-md-12">
+            <div class="topbar">
+                <div class="logo">
+                    <h1><a href="http://localhost:8000/"><img src="{% static 'img/poziom.png' %}"></a></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12">
+       <div id="shell">
+                    <h2>
+                        Witam!
+                    </h2>
+                    <p>
+                        Blog stworzony na zajęcia labolatoryjne z przedmiotu Systemy zarządzania treścią, za pomocą: Python 2.7, Django 1.9.9 oraz Bootstrap 3.5.
+                    </p>
+        </div>
+    </div>
+    </div>
+    <div class="row"><!-- Glowna czesc -->
+        <div class="col-md-12">
+                   <hr class="style14">
+            <div id="enternews">
+             <img src="{% static 'img/enter3.png' %}">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <div class="row" id="newestnews"><!-- Najnowsze news -->
+
+                {% block news %}
+                {% endblock %}
+
+            </div><!--  Koniec najnowszych news -->
+            </div>
+            <div class="col-md-12">
+            <hr class="style14">
+             <div id="enter">
+                 <a href="http://localhost:8000/article/show_all"><img src="{% static 'img/enter1.png' %}"></a>
+             </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</body> 
+
+</html>

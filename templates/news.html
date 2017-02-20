@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "home.html" %}
+{% block news %}
+{% for news in news %}
+                  <div class="col-md-12">
+
+                    <div id='row' class="shellnews">
+                        <div class="news-cont">
+                            {{ news.content }}
+                        </div>
+                        <div class="news-date">
+                            Opublikowano : {{ news.published }}
+                        </div>
+                    </div>
+                  </div>
+{% endfor %}
+{% endblock %}
