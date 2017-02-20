@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'articles',
     'news',
+    'bootstrap_toolkit',
 ]
 
-SITE_ID = 1
 
 
 
@@ -67,7 +67,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates'), os.path.join(BASE_DIR,'templates', 'allauth')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -150,8 +150,21 @@ AUTHENTICATION_BACKENDS = (
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/IG/blog/static/',
+    'C:/Users/GVP/PycharmProjects/IG/blog/',
 ]
 
-MEDIA_ROOT = '/home/gvp/PycharmProjects/IG/blog/media/'
+MEDIA_ROOT = 'C:/Users/GVP/PycharmProjects/IG/blog/media/'
 MEDIA_URL = '/media/'
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = '/'
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'METHOD': 'oauth2',
+        'VERIFIED_EMAIL': False
+    }
+}
